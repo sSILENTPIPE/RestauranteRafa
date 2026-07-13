@@ -11,7 +11,7 @@
    ============================================================ */
 
 window.RAFA_CONFIG = {
-  SUPABASE_URL: "https://eemriujsoaarsdigomvxl.supabase.co/rest/v1/",        // ej: "https://abcd1234.supabase.co"
+  SUPABASE_URL: "https://emriujsoaarsdigomvxl.supabase.co",        // ej: "https://abcd1234.supabase.co"
   SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVtcml1anNvYWFyc2RpZ29tdnhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM0MjQ1MTgsImV4cCI6MjA5OTAwMDUxOH0.AbRnfRMSp7wYrifvLHYGoDuuUzbI2jQvLSJn6PYLGEs",   // clave "anon public" (es segura de publicar: las políticas RLS protegen la escritura)
   FORMSPREE_ID: "https://formspree.io/f/xojobljq"         // ej: "mqkvwxyz" → formulario de contacto (https://formspree.io)
 };
