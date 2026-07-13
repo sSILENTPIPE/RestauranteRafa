@@ -1,0 +1,770 @@
+/* ==========================================================================
+   RESTAURANTE RAFA · Hoja de estilos principal
+   Paleta "Mediterráneo y Bogavante" (Opción A del briefing) · Regla 60-30-10
+   ========================================================================== */
+
+/* ---------- 1. Tokens de diseño ---------- */
+:root {
+  /* Paleta fijada por el briefing (Opción B: Taberna Tradicional y Brasa) */
+  --crema:      #FDFBF7;  /* Fondo principal (60%) — Creme Quente / Amendra */
+  --marino:     #3F2E21;  /* Estructura y títulos (30%) — Marrón Café Oscuro */
+  --bogavante:  #B45309;  /* Acción y avisos clave (10%) — Ámbar Ouro / Fuego */
+  --tinta:      #4A4A4A;  /* Texto de cuerpo — Gris Carbón */
+  --bloque:     #F5F1EC;  /* Fondos de bloques — Derivado cálido del fondo */
+
+  /* Derivados */
+  --marino-oscuro: #2D1F13;
+  --bogavante-oscuro: #92400A;
+  --vino:       #991B1B;  /* Rojo Vino para el sello de postres caseros */
+  --linea:      #E2E8F0;
+  --papel:      #FFFFFF;
+  --papel-borde:#E9E4DA;
+  --logo-tinta: #231F20;
+
+  /* Tipografía */
+  --f-display: "Archivo", system-ui, sans-serif;
+  --f-cuerpo:  "Public Sans", system-ui, sans-serif;
+  --f-mano:    "Caveat", cursive;
+
+  /* Métricas */
+  --ancho-max: 1080px;
+  --radio: 12px;
+  --sombra-suave: 0 1px 2px rgba(63,46,33,.06), 0 8px 24px rgba(63,46,33,.07);
+}
+
+/* ---------- 2. Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--crema);
+  color: var(--tinta);
+  font-family: var(--f-cuerpo);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { max-width: 100%; display: block; }
+
+a { color: var(--marino); }
+
+h1, h2, h3 {
+  font-family: var(--f-display);
+  color: var(--marino);
+  line-height: 1.1;
+  margin: 0 0 .5em;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(2rem, 5.5vw, 3.2rem); font-weight: 800; letter-spacing: -.01em; }
+h2 { font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 800; }
+h3 { font-size: 1.15rem; font-weight: 700; }
+
+p { margin: 0 0 1em; }
+
+.contenedor {
+  width: min(100% - 2.5rem, var(--ancho-max));
+  margin-inline: auto;
+}
+
+.seccion { padding-block: clamp(2.5rem, 7vw, 4.5rem); }
+
+/* Cejilla de sección (voz de rotulación) */
+.cejilla {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-stretch: 115%;
+  font-size: .78rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--bogavante);
+  margin-bottom: .6rem;
+}
+.cejilla--marino { color: var(--marino); }
+
+/* Acceso rápido para teclado */
+.salto-contenido {
+  position: absolute; left: -999px; top: 0;
+  background: var(--marino); color: #fff;
+  padding: .6rem 1rem; z-index: 100; border-radius: 0 0 8px 0;
+}
+.salto-contenido:focus { left: 0; }
+
+:focus-visible {
+  outline: 3px solid var(--bogavante);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ---------- 3. Cabecera y navegación (30% marino) ---------- */
+.cabecera {
+  background: var(--marino);
+  position: sticky; top: 0; z-index: 50;
+  box-shadow: 0 2px 12px rgba(23, 46, 112, .35);
+}
+
+.cabecera__fila {
+  display: flex; align-items: center; gap: 1rem;
+  min-height: 64px;
+}
+
+.marca { display: inline-flex; align-items: center; }
+.marca svg, .marca img { height: 40px; width: auto; color: #fff; }
+
+/* El logo es monocromo: este filtro lo vuelve blanco sobre marino */
+.logo-blanco { filter: brightness(0) invert(1); }
+
+.texto-corto { display: none; }
+
+.nav-principal { margin-left: auto; }
+
+.nav-principal ul {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; align-items: center; gap: .25rem;
+}
+
+.nav-principal a {
+  display: block;
+  font-family: var(--f-display);
+  font-weight: 700; font-size: .95rem;
+  color: #E4EAFB; text-decoration: none;
+  padding: .55rem .8rem; border-radius: 8px;
+}
+.nav-principal a:hover { background: rgba(255,255,255,.12); color: #fff; }
+.nav-principal a[aria-current="page"] {
+  color: #fff;
+  box-shadow: inset 0 -3px 0 var(--bogavante);
+  border-radius: 8px 8px 0 0;
+}
+
+/* Botón llamar en cabecera — uso nº1 del rojo (10%) */
+.btn-llamar-nav {
+  display: inline-flex; align-items: center; gap: .45rem;
+  background: var(--bogavante); color: #fff;
+  font-family: var(--f-display); font-weight: 800; font-size: .95rem;
+  text-decoration: none;
+  padding: .55rem 1rem; border-radius: 999px;
+  white-space: nowrap;
+  transition: background .15s ease, transform .15s ease;
+}
+.btn-llamar-nav:hover { background: var(--bogavante-oscuro); transform: translateY(-1px); }
+
+/* Menú móvil */
+.nav-boton {
+  display: none;
+  margin-left: auto;
+  background: none; border: 2px solid rgba(255,255,255,.4);
+  color: #fff; border-radius: 8px;
+  padding: .45rem .6rem; cursor: pointer;
+  font-family: var(--f-display); font-weight: 700; font-size: .9rem;
+}
+
+@media (max-width: 780px) {
+  .nav-boton { display: inline-flex; align-items: center; gap: .4rem; }
+  .btn-llamar-nav .texto { display: none; }      /* en móvil: etiqueta corta */
+  .btn-llamar-nav .texto-corto { display: inline; }
+  .nav-principal {
+    position: absolute; left: 0; right: 0; top: 100%;
+    background: var(--marino);
+    display: none;
+    border-top: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 14px 24px rgba(23,46,112,.35);
+  }
+  .cabecera.nav-abierta .nav-principal { display: block; }
+  .nav-principal ul { flex-direction: column; align-items: stretch; gap: 0; padding: .5rem 1rem 1rem; }
+  .nav-principal a { padding: .9rem .5rem; font-size: 1.05rem; border-bottom: 1px solid rgba(255,255,255,.12); border-radius: 0; }
+  .nav-principal a[aria-current="page"] { box-shadow: inset 4px 0 0 var(--bogavante); padding-left: .9rem; }
+}
+
+/* ---------- 4. Botones ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  font-family: var(--f-display); font-weight: 800;
+  text-decoration: none; cursor: pointer;
+  border-radius: 10px; border: 2px solid transparent;
+  padding: .85rem 1.4rem; font-size: 1.05rem;
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn--llamar {           /* Ámbar dorado: reservado a la llamada */
+  background: var(--bogavante); color: #fff;
+  box-shadow: 0 6px 18px rgba(180,83,9,.35);
+}
+.btn--llamar:hover { background: var(--bogavante-oscuro); transform: translateY(-2px); }
+
+.btn--contorno {
+  background: transparent; color: var(--marino);
+  border-color: var(--marino);
+}
+.btn--contorno:hover { background: var(--marino); color: #fff; }
+
+.btn--marino { background: var(--marino); color: #fff; }
+.btn--marino:hover { background: var(--marino-oscuro); }
+
+.btn--bloque { width: 100%; }
+
+/* ---------- 5. Portada ---------- */
+.hero { padding-block: clamp(2.5rem, 8vw, 5rem) clamp(2rem, 6vw, 3.5rem); }
+
+.hero__logo {
+  width: min(520px, 78vw);
+  color: var(--logo-tinta);
+  margin-bottom: 1.4rem;
+}
+
+.hero__lema {
+  font-size: clamp(1.1rem, 2.6vw, 1.35rem);
+  max-width: 34ch;
+  color: var(--tinta);
+}
+
+.hero__acciones {
+  display: flex; flex-wrap: wrap; gap: .8rem;
+  margin-top: 1.6rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero > * { animation: subir .6s ease both; }
+  .hero > *:nth-child(2) { animation-delay: .08s; }
+  .hero > *:nth-child(3) { animation-delay: .16s; }
+  @keyframes subir {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+
+/* ---------- 6. Banner de arroces de fin de semana (uso del ámbar) ---------- */
+.banner-arroces {
+  background: var(--bogavante);
+  color: #fff;
+  border-radius: var(--radio);
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 10px 30px rgba(180,83,9,.28);
+}
+
+.banner-arroces__titulo {
+  font-family: var(--f-display);
+  font-weight: 800; font-stretch: 72%;
+  text-transform: uppercase; letter-spacing: .06em;
+  font-size: clamp(1.3rem, 3.4vw, 1.8rem);
+  margin: 0 0 .8rem;
+}
+
+.banner-arroces__dias {
+  display: grid; gap: .75rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin: 0; padding: 0; list-style: none;
+}
+
+.banner-arroces__dias li {
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 10px;
+  padding: .8rem 1rem;
+  line-height: 1.35;
+}
+
+.banner-arroces__dias strong {
+  display: block;
+  font-family: var(--f-display); font-weight: 800;
+  text-transform: uppercase; letter-spacing: .08em;
+  font-size: .85rem; margin-bottom: .2rem;
+}
+
+.banner-arroces__nota {
+  margin: .9rem 0 0; font-size: .88rem; opacity: .92;
+  font-weight: 600;
+}
+
+/* ---------- 7. Tarjetas de información ---------- */
+.rejilla-info {
+  display: grid; gap: 1.1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.tarjeta {
+  background: var(--bloque);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  padding: 1.4rem 1.4rem 1.5rem;
+}
+
+.tarjeta h3 { margin-bottom: .6rem; }
+.tarjeta p:last-child { margin-bottom: 0; }
+
+.tarjeta--papel { background: var(--papel); box-shadow: var(--sombra-suave); }
+
+.dato-fuerte {
+  font-family: var(--f-display); font-weight: 800;
+  color: var(--marino); font-size: 1.15rem;
+}
+
+.cerrado {
+  display: inline-block;
+  font-family: var(--f-display); font-weight: 800;
+  font-stretch: 78%; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--bogavante-oscuro);
+  border: 2px solid currentColor; border-radius: 6px;
+  padding: .15rem .55rem; margin-top: .4rem;
+}
+
+.wifi {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-size: .85rem; color: #64748B; font-weight: 600;
+}
+
+/* ---------- 8. Sello "100% caseros" (uso nº3: rojo vino) ---------- */
+.sello {
+  display: inline-block;
+  font-family: var(--f-display);
+  font-weight: 800; font-stretch: 74%;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: var(--vino);
+  border: 3px solid var(--vino);
+  border-radius: 8px;
+  padding: .35rem .8rem .3rem;
+  transform: rotate(-3.5deg);
+  box-shadow: inset 0 0 0 1.5px var(--crema), inset 0 0 0 3px var(--vino);
+  background: rgba(153,27,27,.04);
+}
+
+.sello--grande { font-size: 1.25rem; padding: .5rem 1.1rem .45rem; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .sello--animado { animation: estampar .45s cubic-bezier(.2,1.4,.4,1) both .35s; }
+  @keyframes estampar {
+    from { opacity: 0; transform: rotate(-3.5deg) scale(1.6); }
+    to   { opacity: 1; transform: rotate(-3.5deg) scale(1); }
+  }
+}
+
+/* ---------- 9. Aviso destacado ---------- */
+.aviso {
+  background: var(--marino);
+  color: #fff;
+  border-radius: 10px;
+  padding: .8rem 1.1rem;
+  display: flex; align-items: center; gap: .7rem;
+  font-weight: 600;
+}
+.aviso strong { font-family: var(--f-display); letter-spacing: .04em; }
+
+/* ---------- 10. LA MINUTA (elemento firma) ---------- */
+.minuta {
+  background: var(--papel);
+  border: 1px solid var(--papel-borde);
+  border-top: 6px solid var(--marino);
+  border-radius: 6px;
+  box-shadow:
+    0 1px 0 rgba(35,31,32,.05),
+    0 14px 34px rgba(63,46,33,.12),
+    0 2px 6px rgba(63,46,33,.08);
+  padding: clamp(1.4rem, 4vw, 2.4rem);
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.minuta__cabecera {
+  text-align: center;
+  border-bottom: 2px solid var(--linea);
+  padding-bottom: 1.1rem;
+  margin-bottom: 1.3rem;
+}
+
+.minuta__marca { height: 44px; width: auto; margin: 0 auto .8rem; color: var(--logo-tinta); }
+
+.minuta__dia {
+  font-family: var(--f-display);
+  font-weight: 800; font-stretch: 66%;
+  font-size: clamp(2.6rem, 9vw, 3.8rem);
+  letter-spacing: .04em;
+  color: var(--marino);
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0;
+}
+
+.minuta__fecha {
+  font-size: .85rem; color: #64748B; margin: .35rem 0 0;
+  font-weight: 600; letter-spacing: .04em;
+}
+
+.minuta__seccion { margin-bottom: 1.4rem; }
+
+.minuta__titulo-seccion {
+  font-family: var(--f-display);
+  font-weight: 800; font-stretch: 82%;
+  text-transform: uppercase; letter-spacing: .14em;
+  font-size: .95rem;
+  color: var(--bogavante);
+  margin: 0 0 .55rem;
+  display: flex; align-items: center; gap: .6rem;
+}
+.minuta__titulo-seccion::after {
+  content: ""; flex: 1; height: 2px;
+  background: repeating-linear-gradient(90deg, var(--linea) 0 6px, transparent 6px 11px);
+}
+
+.minuta__platos { list-style: none; margin: 0; padding: 0; }
+
+.minuta__platos li {
+  font-size: 1.08rem;
+  padding: .5rem .1rem;
+  border-bottom: 1px dashed var(--linea);
+  color: var(--tinta);
+}
+.minuta__platos li:last-child { border-bottom: 0; }
+
+/* Cláusulas fijas: voz de fotocopia en mayúsculas */
+.minuta__clausulas {
+  background: var(--bloque);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  margin-top: .4rem;
+}
+
+.minuta__clausulas p {
+  font-family: var(--f-display);
+  font-weight: 700; font-stretch: 90%;
+  font-size: .8rem; letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--marino);
+  margin: 0 0 .55rem;
+}
+.minuta__clausulas p:last-child { margin-bottom: 0; }
+.minuta__clausulas .resaltado { color: var(--bogavante-oscuro); }
+
+.minuta__postres {
+  display: flex; align-items: center; flex-wrap: wrap; gap: .8rem 1rem;
+  margin: 1.1rem 0 0;
+}
+.minuta__postres p { margin: 0; font-size: .95rem; }
+
+/* Sugerencia del día: escrita "a mano" */
+.minuta__sugerencia {
+  font-family: var(--f-mano);
+  font-size: clamp(1.5rem, 4.5vw, 1.9rem);
+  color: var(--bogavante-oscuro);
+  text-align: center;
+  margin: 1.3rem 0 0;
+  transform: rotate(-1.2deg);
+  line-height: 1.2;
+}
+
+.minuta__pie {
+  text-align: center;
+  font-family: var(--f-display);
+  font-weight: 800; font-stretch: 80%;
+  letter-spacing: .12em; text-transform: uppercase;
+  font-size: .85rem;
+  color: var(--marino);
+  border-top: 2px solid var(--linea);
+  margin-top: 1.4rem; padding-top: 1rem;
+}
+
+.minuta__actualizado {
+  text-align: center; font-size: .78rem; color: #94A3B8;
+  margin: .8rem 0 0;
+}
+
+/* Precios del menú (chips sobre la minuta) */
+.precios-menu {
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  max-width: 640px; margin: 0 auto 1.8rem;
+}
+
+.precio-chip {
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  padding: 1rem 1.2rem;
+  box-shadow: var(--sombra-suave);
+}
+
+.precio-chip h3 {
+  font-stretch: 80%; text-transform: uppercase; letter-spacing: .08em;
+  font-size: .85rem; margin-bottom: .5rem;
+}
+
+.precio-chip .cifras { display: flex; gap: 1.4rem; }
+
+.precio-chip .cifra strong {
+  display: block;
+  font-family: var(--f-display); font-weight: 800;
+  font-size: 1.5rem; color: var(--marino);
+  font-variant-numeric: tabular-nums;
+}
+.precio-chip .cifra span { font-size: .8rem; color: #64748B; font-weight: 600; }
+
+/* ---------- 11. LA CARTA ---------- */
+.chips-carta {
+  position: sticky; top: 64px; z-index: 40;
+  background: linear-gradient(var(--crema) 82%, transparent);
+  padding: .8rem 0 1rem;
+}
+
+.chips-carta ul {
+  list-style: none; margin: 0; padding: 0 0 .25rem;
+  display: flex; gap: .5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.chips-carta a {
+  display: block; white-space: nowrap;
+  font-family: var(--f-display); font-weight: 700; font-size: .85rem;
+  color: var(--marino); text-decoration: none;
+  border: 1.5px solid var(--marino);
+  border-radius: 999px;
+  padding: .35rem .85rem;
+  background: var(--papel);
+}
+.chips-carta a:hover { background: var(--marino); color: #fff; }
+
+.seccion-carta { padding-block: 1.6rem 2.2rem; scroll-margin-top: 130px; }
+
+.seccion-carta > h2 {
+  font-stretch: 74%; text-transform: uppercase; letter-spacing: .05em;
+  border-bottom: 3px solid var(--marino);
+  padding-bottom: .35rem;
+  display: flex; align-items: baseline; gap: .8rem; flex-wrap: wrap;
+}
+
+.seccion-carta .nota-seccion {
+  font-family: var(--f-cuerpo); font-size: .85rem; font-weight: 600;
+  color: #64748B; letter-spacing: 0; text-transform: none;
+}
+
+/* Fila de plato con puntos de guía hasta el precio */
+.plato {
+  display: flex; align-items: baseline; gap: .6rem;
+  padding: .65rem 0;
+}
+.plato + .plato { border-top: 1px solid var(--linea); }
+
+.plato__nombre { font-weight: 600; color: var(--tinta); }
+.plato__desc { display: block; font-weight: 400; font-size: .86rem; color: #64748B; margin-top: .1rem; }
+
+.plato__guia { flex: 1; border-bottom: 2px dotted #C3CDD9; min-width: 24px; transform: translateY(-4px); }
+
+.plato__precio {
+  font-family: var(--f-display); font-weight: 800;
+  color: var(--marino); font-size: 1.05rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Bocadillos: dos columnas de precio (entero / mitad) */
+.tabla-bocadillos { width: 100%; border-collapse: collapse; }
+
+.tabla-bocadillos th {
+  font-family: var(--f-display); font-weight: 800; font-stretch: 84%;
+  text-transform: uppercase; letter-spacing: .1em; font-size: .74rem;
+  color: var(--marino);
+  text-align: right; padding: .4rem .2rem .55rem;
+  border-bottom: 2px solid var(--marino);
+}
+.tabla-bocadillos th:first-child { text-align: left; }
+
+.tabla-bocadillos td {
+  padding: .65rem .2rem;
+  border-bottom: 1px solid var(--linea);
+  vertical-align: top;
+}
+
+.tabla-bocadillos td.precio {
+  text-align: right;
+  font-family: var(--f-display); font-weight: 800;
+  color: var(--marino); font-variant-numeric: tabular-nums;
+  white-space: nowrap; width: 4.6rem;
+}
+
+.tabla-bocadillos .plato__desc { max-width: 46ch; }
+.tabla-bocadillos td.precio[colspan] { white-space: normal; }
+
+/* Postres: enmarcado con el sello (regla del briefing) */
+.marco-caseros {
+  border: 2px solid var(--bogavante);
+  border-radius: var(--radio);
+  padding: 1.3rem 1.4rem .6rem;
+  position: relative;
+  background: var(--papel);
+  margin-top: 1.6rem;
+}
+
+.marco-caseros .sello {
+  position: absolute; top: -1.1rem; left: 1rem;
+  background: var(--papel);
+}
+
+/* ---------- 12. Contacto ---------- */
+.rejilla-contacto {
+  display: grid; gap: 1.4rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 860px) {
+  .rejilla-contacto { grid-template-columns: 1.05fr .95fr; align-items: start; }
+}
+
+.mapa { border-radius: var(--radio); overflow: hidden; border: 1px solid var(--linea); box-shadow: var(--sombra-suave); }
+.mapa iframe { display: block; width: 100%; height: 340px; border: 0; }
+
+.formulario { display: grid; gap: 1rem; }
+
+.campo label {
+  display: block;
+  font-family: var(--f-display); font-weight: 700; font-size: .88rem;
+  color: var(--marino);
+  margin-bottom: .3rem;
+}
+
+.campo input, .campo textarea, .campo select {
+  width: 100%;
+  font: inherit; color: var(--tinta);
+  background: var(--papel);
+  border: 1.5px solid #CBD5E1;
+  border-radius: 10px;
+  padding: .75rem .9rem;
+}
+.campo input:focus, .campo textarea:focus, .campo select:focus {
+  border-color: var(--marino);
+  outline: 3px solid rgba(63,46,33,.18);
+}
+
+.campo textarea { min-height: 130px; resize: vertical; }
+
+.nota-formulario {
+  background: var(--bloque);
+  border-left: 4px solid var(--marino);
+  border-radius: 0 8px 8px 0;
+  padding: .8rem 1rem;
+  font-size: .92rem;
+}
+.nota-formulario[hidden] { display: none; }
+
+/* ---------- 13. Panel de administración ---------- */
+.panel-fondo { background: var(--bloque); min-height: 100dvh; }
+
+.panel {
+  max-width: 520px;
+  margin-inline: auto;
+  padding: 1.2rem 1.1rem 3.5rem;
+}
+
+.panel-tarjeta {
+  background: var(--papel);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+  padding: 1.4rem 1.3rem;
+  margin-bottom: 1.1rem;
+}
+
+.panel h1 { font-size: 1.5rem; }
+.panel h2 { font-size: 1.05rem; font-stretch: 84%; text-transform: uppercase; letter-spacing: .1em; }
+
+.chips-dia { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+.chip-dia {
+  font-family: var(--f-display); font-weight: 800; font-stretch: 78%;
+  font-size: .95rem; letter-spacing: .04em;
+  border: 2px solid var(--marino); border-radius: 999px;
+  background: var(--papel); color: var(--marino);
+  padding: .5rem .95rem; cursor: pointer;
+}
+.chip-dia[aria-pressed="true"] { background: var(--marino); color: #fff; }
+
+.campos-platos { display: grid; gap: .7rem; }
+
+.aviso-demo {
+  background: #FEF3C7; border: 1px solid #F59E0B; color: #78350F;
+  border-radius: 10px; padding: .8rem 1rem; font-size: .9rem;
+  margin-bottom: 1.1rem;
+}
+
+.toast {
+  position: fixed; left: 50%; bottom: 1.4rem; transform: translateX(-50%);
+  background: var(--marino); color: #fff;
+  font-family: var(--f-display); font-weight: 700;
+  border-radius: 999px; padding: .8rem 1.4rem;
+  box-shadow: 0 10px 30px rgba(23,46,112,.4);
+  opacity: 0; pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 90;
+  max-width: min(92vw, 480px); text-align: center;
+}
+.toast.visible { opacity: 1; transform: translateX(-50%) translateY(-6px); }
+.toast--error { background: var(--bogavante-oscuro); }
+
+.fila-sesion {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  font-size: .85rem; color: #64748B;
+  margin-bottom: 1rem;
+}
+.fila-sesion button {
+  background: none; border: none; cursor: pointer;
+  color: var(--marino); font-weight: 700; font-family: var(--f-display);
+  text-decoration: underline; font-size: .85rem; padding: .2rem;
+}
+
+/* ---------- 14. Pie de página (30% marino) ---------- */
+.pie {
+  background: var(--marino);
+  color: #DBE4FB;
+  margin-top: clamp(2.5rem, 7vw, 4.5rem);
+  padding-block: 2.6rem 2rem;
+}
+
+.pie a { color: #fff; }
+
+.pie__rejilla {
+  display: grid; gap: 1.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: start;
+}
+
+.pie__marca svg, .pie__marca img { height: 46px; width: auto; color: #fff; margin-bottom: .8rem; }
+
+.pie h3 {
+  color: #fff; font-size: .85rem;
+  font-stretch: 84%; text-transform: uppercase; letter-spacing: .14em;
+  margin-bottom: .7rem;
+}
+
+.pie p { margin-bottom: .4rem; font-size: .95rem; }
+.pie .wifi { color: #A9B8E8; }
+
+.pie__condiciones {
+  border-top: 1px solid rgba(255,255,255,.2);
+  margin-top: 2rem; padding-top: 1.3rem;
+}
+
+.pie__condiciones ul {
+  list-style: none; margin: 0 0 1rem; padding: 0;
+  display: flex; flex-wrap: wrap; gap: .5rem 1.6rem;
+}
+
+.pie__condiciones li {
+  font-family: var(--f-display); font-weight: 700; font-stretch: 88%;
+  font-size: .78rem; letter-spacing: .06em; text-transform: uppercase;
+  color: #B9C6EE;
+}
+.pie__condiciones li::before { content: "— "; color: var(--bogavante); }
+
+.pie__legal { font-size: .8rem; color: #93A5DB; margin: 0; }
+
+/* ---------- 15. Utilidades ---------- */
+.centrado { text-align: center; }
+.mt-2 { margin-top: 2rem; }
+.mt-1 { margin-top: 1rem; }
+.oculto { display: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

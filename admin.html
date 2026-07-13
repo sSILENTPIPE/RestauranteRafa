@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel del menú · Restaurante Rafa</title>
+  <meta name="description" content="Panel privado para publicar el menú del día.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1E3A8A">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-rafa.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Caveat:wght@600&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="panel-fondo">
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="marca" href="index.html" aria-label="Ver la web pública">
+        <img class="logo-blanco" src="assets/logo-rafa.svg" alt="Restaurante Rafa">
+      </a>
+      <a class="btn-llamar-nav" href="index.html" style="margin-left:auto">Ver la web →</a>
+    </div>
+  </header>
+
+  <main class="panel">
+    <h1 class="mt-1">Menú del día</h1>
+    <p>Rellena los platos de hoy y pulsa <strong>Publicar</strong>. La web se actualiza al momento.</p>
+
+    <!-- Aviso cuando Supabase aún no está conectado -->
+    <p class="aviso-demo oculto" id="aviso-demo">
+      <strong>Modo demostración.</strong> Los cambios solo se ven en la vista previa de abajo.
+      Para publicar de verdad, conecta Supabase siguiendo el README.
+    </p>
+
+    <!-- ===== Acceso (solo con Supabase configurado) ===== -->
+    <section class="panel-tarjeta" id="vista-acceso">
+      <h2>Acceso del dueño</h2>
+      <form id="form-acceso" class="formulario mt-1">
+        <div class="campo">
+          <label for="acceso-email">Email</label>
+          <input id="acceso-email" type="email" autocomplete="username" required>
+        </div>
+        <div class="campo">
+          <label for="acceso-clave">Contraseña</label>
+          <input id="acceso-clave" type="password" autocomplete="current-password" required>
+        </div>
+        <button class="btn btn--marino btn--bloque" id="boton-entrar" type="submit">Entrar</button>
+      </form>
+    </section>
+
+    <!-- ===== Panel de edición ===== -->
+    <section id="vista-panel" class="oculto">
+
+      <div class="fila-sesion" id="fila-sesion">
+        <span>Sesión: <strong id="email-sesion"></strong></span>
+        <button type="button" id="boton-salir">Cerrar sesión</button>
+      </div>
+
+      <form id="form-menu">
+        <div class="panel-tarjeta">
+          <h2>Día de la semana</h2>
+          <div class="chips-dia mt-1" role="group" aria-label="Elegir día">
+            <button type="button" class="chip-dia" data-dia="LUNES" aria-pressed="false">Lunes</button>
+            <button type="button" class="chip-dia" data-dia="MARTES" aria-pressed="false">Martes</button>
+            <button type="button" class="chip-dia" data-dia="MIÉRCOLES" aria-pressed="false">Miércoles</button>
+            <button type="button" class="chip-dia" data-dia="JUEVES" aria-pressed="false">Jueves</button>
+            <button type="button" class="chip-dia" data-dia="VIERNES" aria-pressed="false">Viernes</button>
+            <button type="button" class="chip-dia" data-dia="SÁBADO" aria-pressed="false">Sábado</button>
+          </div>
+        </div>
+
+        <div class="panel-tarjeta">
+          <h2>Primeros</h2>
+          <div class="campos-platos mt-1">
+            <div class="campo">
+              <label for="p1">Primero 1</label>
+              <input id="p1" data-primero type="text" placeholder="Ej: Cazuela de lentejas a la castellana">
+            </div>
+            <div class="campo">
+              <label for="p2">Primero 2</label>
+              <input id="p2" data-primero type="text" placeholder="Ej: Boquerones en vinagre">
+            </div>
+            <div class="campo">
+              <label for="p3">Primero 3</label>
+              <input id="p3" data-primero type="text" placeholder="Ej: Gazpacho andaluz">
+            </div>
+            <div class="campo">
+              <label for="p4">Primero 4</label>
+              <input id="p4" data-primero type="text" placeholder="Ej: Ensalada capresse">
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-tarjeta">
+          <h2>Segundos a elegir</h2>
+          <div class="campos-platos mt-1">
+            <div class="campo">
+              <label for="s1">Segundo 1</label>
+              <input id="s1" data-segundo type="text" placeholder="Ej: Pierna asada en salsa de naranja y setas">
+            </div>
+            <div class="campo">
+              <label for="s2">Segundo 2</label>
+              <input id="s2" data-segundo type="text" placeholder="Ej: Pollo al ast / al romero">
+            </div>
+            <div class="campo">
+              <label for="s3">Segundo 3</label>
+              <input id="s3" data-segundo type="text" placeholder="Ej: Canelones gratinados con bechamel">
+            </div>
+            <div class="campo">
+              <label for="s4">Segundo 4</label>
+              <input id="s4" data-segundo type="text" placeholder="Ej: Bacalao vizcaína">
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-tarjeta">
+          <h2>Sugerencia especial <span style="font-weight:400;text-transform:none;letter-spacing:0">(opcional)</span></h2>
+          <div class="campo mt-1">
+            <label for="sugerencia" class="oculto">Sugerencia</label>
+            <input id="sugerencia" type="text" placeholder="Ej: HAY SORBETE ALMENDRAS">
+          </div>
+        </div>
+
+        <button class="btn btn--llamar btn--bloque" id="boton-publicar" type="submit">
+          Publicar menú del día
+        </button>
+      </form>
+
+      <h2 class="mt-2" style="font-size:1.05rem">Así lo verán los clientes</h2>
+      <article class="minuta mt-1" id="vista-previa" aria-live="polite"></article>
+
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

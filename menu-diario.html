@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menú del día · Restaurante Rafa, Son Castelló</title>
+  <meta name="description" content="El menú del día de hoy en Restaurante Rafa (Polígono Son Castelló, Palma). De lunes a viernes 15,50 € · Sábados 19,90 €. Postre casero incluido.">
+  <meta name="theme-color" content="#1E3A8A">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-rafa.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Caveat:wght@600&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="marca" href="index.html" aria-label="Restaurante Rafa — Inicio">
+        <img class="logo-blanco" src="assets/logo-rafa.svg" alt="Restaurante Rafa">
+      </a>
+      <button class="nav-boton" aria-expanded="false" aria-controls="nav-principal">☰ Menú</button>
+      <nav class="nav-principal" id="nav-principal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu-diario.html" aria-current="page">Menú del día</a></li>
+          <li><a href="la-carta.html">La carta</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <a class="btn-llamar-nav" href="tel:971431058">
+        📞 <span class="texto">971 43 10 58</span><span class="texto-corto">Llamar</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="seccion contenedor">
+      <div class="centrado">
+        <p class="cejilla">Recién salido de cocina</p>
+        <h1>El menú de hoy</h1>
+        <p>Lo escribe Rafa cada mañana, como la pizarra de la barra.</p>
+      </div>
+
+      <!-- Precios vigentes del menú -->
+      <div class="precios-menu mt-2">
+        <div class="precio-chip">
+          <h3>De lunes a viernes</h3>
+          <div class="cifras">
+            <div class="cifra"><strong>15,50 €</strong><span>Menú completo</span></div>
+            <div class="cifra"><strong>12,50 €</strong><span>Medio menú</span></div>
+          </div>
+        </div>
+        <div class="precio-chip">
+          <h3>Sábados</h3>
+          <div class="cifras">
+            <div class="cifra"><strong>19,90 €</strong><span>Menú completo</span></div>
+            <div class="cifra"><strong>17,90 €</strong><span>Medio menú</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LA MINUTA: se rellena desde js/menu-diario.js -->
+      <article class="minuta" id="minuta" aria-live="polite">
+        <p class="centrado">Cargando el menú de hoy…</p>
+      </article>
+
+      <div class="centrado mt-2">
+        <a class="btn btn--llamar" href="tel:971431058">📞 Reservar mesa · 971 43 10 58</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__rejilla">
+        <div class="pie__marca">
+          <img class="logo-blanco" src="assets/logo-rafa.svg" alt="Restaurante Rafa">
+          <p>Cocina casera y menú diario en el Polígono Son Castelló.</p>
+          <p><span class="wifi">📶 Zona Wi-Fi</span></p>
+        </div>
+        <div>
+          <h3>Dónde estamos</h3>
+          <p>Gran Via Asima, 26<br>Polígono Son Castelló · 07009 Palma</p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Restaurante+Rafa+Gran+Via+Asima+26+Palma" target="_blank" rel="noopener">Cómo llegar →</a></p>
+        </div>
+        <div>
+          <h3>Horario</h3>
+          <p>Lunes a sábado · 05:30 – 17:30</p>
+          <p><strong>Cerrado domingos y festivos</strong></p>
+        </div>
+        <div>
+          <h3>Reservas</h3>
+          <p><a href="tel:971431058">971 43 10 58</a></p>
+          <p><a href="contacto.html">Escríbenos →</a></p>
+        </div>
+      </div>
+      <div class="pie__condiciones">
+        <ul>
+          <li>Solo una cuenta por mesa</li>
+          <li>No se puede cambiar el postre por café</li>
+          <li>El menú no incluye refrescos ni cafés</li>
+        </ul>
+        <p class="pie__legal">© <span data-anio>2026</span> Restaurante Rafa · Precios con IVA incluido</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/menu-diario.js"></script>
+</body>
+</html>

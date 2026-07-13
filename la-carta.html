@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La carta · Restaurante Rafa, Son Castelló</title>
+  <meta name="description" content="Carta completa de Restaurante Rafa: bocadillos en baguette rústica, raciones para picar, arroces con bogavante, carnes, pescados, postres 100% caseros y bodega. Precios con IVA.">
+  <meta name="theme-color" content="#1E3A8A">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-rafa.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Caveat:wght@600&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="marca" href="index.html" aria-label="Restaurante Rafa — Inicio">
+        <img class="logo-blanco" src="assets/logo-rafa.svg" alt="Restaurante Rafa">
+      </a>
+      <button class="nav-boton" aria-expanded="false" aria-controls="nav-principal">☰ Menú</button>
+      <nav class="nav-principal" id="nav-principal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu-diario.html">Menú del día</a></li>
+          <li><a href="la-carta.html" aria-current="page">La carta</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <a class="btn-llamar-nav" href="tel:971431058">
+        📞 <span class="texto">971 43 10 58</span><span class="texto-corto">Llamar</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="seccion contenedor" style="padding-bottom:0">
+      <p class="cejilla">De la barra a la mesa</p>
+      <h1>La carta</h1>
+      <p>Bocadillos en baguette rústica, raciones, arroces y cocina de siempre. Precios con IVA incluido.</p>
+
+      <!-- Arroces de fin de semana: destacado prioritario también en la carta -->
+      <div class="banner-arroces mt-1">
+        <h2 class="banner-arroces__titulo">Fines de semana de arroz 🥘</h2>
+        <ul class="banner-arroces__dias">
+          <li><strong>Todos los viernes del año</strong> Paella de pescado y marisco</li>
+          <li><strong>Todos los sábados del año</strong> Arroz marinera de pescado y marisco</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Navegación por secciones -->
+    <nav class="chips-carta" aria-label="Secciones de la carta">
+      <div class="contenedor">
+        <ul>
+          <li><a href="#calientes">Bocadillos calientes</a></li>
+          <li><a href="#frios">Bocadillos fríos</a></li>
+          <li><a href="#picar">Para picar</a></li>
+          <li><a href="#arroces">Arroces</a></li>
+          <li><a href="#pescados">Pescados</a></li>
+          <li><a href="#carnes">Carnes</a></li>
+          <li><a href="#postres">Postres</a></li>
+          <li><a href="#bodega">Bodega</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="contenedor">
+
+      <!-- ========== BOCADILLOS CALIENTES ========== -->
+      <section class="seccion-carta" id="calientes" aria-labelledby="t-calientes">
+        <h2 id="t-calientes">Bocadillos calientes <span class="nota-seccion">Baguette rústica</span></h2>
+        <table class="tabla-bocadillos">
+          <thead>
+            <tr><th scope="col">Bocadillo</th><th scope="col">Entero</th><th scope="col">Mitad</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="plato__nombre">Bocadillo de calamares</span><span class="plato__desc">Calamares, alioli o mayonesa</span></td>
+              <td class="precio">7,20 €</td><td class="precio">5,90 €</td>
+            </tr>
+            <tr>
+              <td><span class="plato__nombre">Bocadillo de tortilla francesa</span><span class="plato__desc">Al gusto: atún, york, queso, sobrasada…</span></td>
+              <td class="precio">7,20 €</td><td class="precio">5,90 €</td>
+            </tr>
+            <tr>
+              <td><span class="plato__nombre">Bocadillo de pollo rebozado</span><span class="plato__desc">Pechuga empanada, tomate, lechuga, mayonesa</span></td>
+              <td class="precio">7,20 €</td><td class="precio">5,90 €</td>
+            </tr>
+            <tr>
+              <td><span class="plato__nombre">Pepito de lomo</span><span class="plato__desc">Filetes de lomo, tomate y aceite</span></td>
+              <td class="precio">7,20 €</td><td class="precio">5,90 €</td>
+            </tr>
+            <tr>
+              <td><span class="plato__nombre">Pepito de lomo, queso y bacón</span></td>
+              <td class="precio">7,20 €</td><td class="precio">5,90 €</td>
+            </tr>
+            <tr>
+              <td><span class="plato__nombre">Pepito Mercedes</span><span class="plato__desc">Lomo rebozado, queso, bacón, cebolla, pimientos verdes</span></td>
+              <td class="precio">7,20 €</td><td class="precio">5,90 €</td>
+            </tr>
+            <tr>
+              <td><span class="plato__nombre">Don Luciano</span><span class="plato__desc">Lomo rebozado, tortilla francesa, queso, bacón, tomate, aceite</span></td>
+              <td class="precio">7,20 €</td><td class="precio">5,90 €</td>
+            </tr>
+            <tr>
+              <td><span class="plato__nombre">Bocadillo de chipirones</span><span class="plato__desc">Con mayonesa o alioli</span></td>
+              <td class="precio">7,20 €</td><td class="precio">5,90 €</td>
+            </tr>
+            <tr>
+              <td><span class="plato__nombre">Sándwich mixto</span><span class="plato__desc">Mantequilla, york y queso</span></td>
+              <td class="precio" colspan="2">3,90 € · precio único</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ========== BOCADILLOS FRÍOS ========== -->
+      <section class="seccion-carta" id="frios" aria-labelledby="t-frios">
+        <h2 id="t-frios">Bocadillos fríos <span class="nota-seccion">Baguette rústica</span></h2>
+        <table class="tabla-bocadillos">
+          <thead>
+            <tr><th scope="col">Bocadillo</th><th scope="col">Entero</th><th scope="col">Mitad</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="plato__nombre">Bocadillo de york y queso</span></td><td class="precio">5,30 €</td><td class="precio">4,30 €</td></tr>
+            <tr><td><span class="plato__nombre">Bocadillo de serrano y queso</span></td><td class="precio">5,30 €</td><td class="precio">4,30 €</td></tr>
+            <tr><td><span class="plato__nombre">Bocadillo de jamón de cebo ibérico</span></td><td class="precio">8,95 €</td><td class="precio">5,50 €</td></tr>
+            <tr><td><span class="plato__nombre">Bocadillo de sobrasada y queso</span></td><td class="precio">5,30 €</td><td class="precio">4,30 €</td></tr>
+            <tr><td><span class="plato__nombre">Bocadillo de camaiot</span></td><td class="precio">5,30 €</td><td class="precio">4,30 €</td></tr>
+            <tr><td><span class="plato__nombre">Bocadillo de queso manchego</span></td><td class="precio">5,30 €</td><td class="precio">4,30 €</td></tr>
+            <tr><td><span class="plato__nombre">Bocadillo de queso de oveja</span></td><td class="precio">7,50 €</td><td class="precio">4,80 €</td></tr>
+            <tr><td><span class="plato__nombre">Bocadillo de atún</span></td><td class="precio">5,30 €</td><td class="precio">4,30 €</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ========== PARA PICAR ========== -->
+      <section class="seccion-carta" id="picar" aria-labelledby="t-picar">
+        <h2 id="t-picar">Para picar</h2>
+        <div class="plato"><span class="plato__nombre">Pan y alioli</span><span class="plato__guia"></span><span class="plato__precio">1,90 €</span></div>
+        <div class="plato"><span class="plato__nombre">Ensalada César con pollo crujiente</span><span class="plato__guia"></span><span class="plato__precio">9,50 €</span></div>
+        <div class="plato"><span class="plato__nombre">Calamares a la romana</span><span class="plato__guia"></span><span class="plato__precio">10,50 €</span></div>
+        <div class="plato"><span class="plato__nombre">Croquetas caseras de pollo</span><span class="plato__guia"></span><span class="plato__precio">9,50 €</span></div>
+        <div class="plato"><span class="plato__nombre">Cazón en adobo</span><span class="plato__guia"></span><span class="plato__precio">10,50 €</span></div>
+        <div class="plato"><span class="plato__nombre">Queso de oveja</span><span class="plato__guia"></span><span class="plato__precio">9,00 €</span></div>
+      </section>
+
+      <!-- ========== ARROCES ========== -->
+      <section class="seccion-carta" id="arroces" aria-labelledby="t-arroces">
+        <h2 id="t-arroces">Arroces especiales</h2>
+        <div class="plato"><span class="plato__nombre">Arroz marinera con bogavante</span><span class="plato__guia"></span><span class="plato__precio">22,50 €</span></div>
+        <div class="plato"><span class="plato__nombre">Paella con bogavante</span><span class="plato__guia"></span><span class="plato__precio">22,50 €</span></div>
+        <div class="plato"><span class="plato__nombre">Arroz negro de sepia</span><span class="plato__guia"></span><span class="plato__precio">18,50 €</span></div>
+      </section>
+
+      <!-- ========== PESCADOS ========== -->
+      <section class="seccion-carta" id="pescados" aria-labelledby="t-pescados">
+        <h2 id="t-pescados">Pescados</h2>
+        <div class="plato"><span class="plato__nombre">Calamar a la plancha<span class="plato__desc">Con ensalada</span></span><span class="plato__guia"></span><span class="plato__precio">16,50 €</span></div>
+        <div class="plato"><span class="plato__nombre">Gallo frito con cebolla</span><span class="plato__guia"></span><span class="plato__precio">16,50 €</span></div>
+        <div class="plato"><span class="plato__nombre">Bacalao a la bilbaína</span><span class="plato__guia"></span><span class="plato__precio">16,50 €</span></div>
+      </section>
+
+      <!-- ========== CARNES ========== -->
+      <section class="seccion-carta" id="carnes" aria-labelledby="t-carnes">
+        <h2 id="t-carnes">Carnes <span class="nota-seccion">Guarnición a elegir</span></h2>
+        <div class="plato"><span class="plato__nombre">Secreto a la plancha<span class="plato__desc">Con chimichurri</span></span><span class="plato__guia"></span><span class="plato__precio">15,50 €</span></div>
+        <div class="plato"><span class="plato__nombre">Escalope de lomo extrafino</span><span class="plato__guia"></span><span class="plato__precio">10,50 €</span></div>
+        <div class="plato"><span class="plato__nombre">Escalope de solomillo de pollo</span><span class="plato__guia"></span><span class="plato__precio">10,50 €</span></div>
+        <div class="plato"><span class="plato__nombre">Pechuga de pollo a la plancha</span><span class="plato__guia"></span><span class="plato__precio">10,50 €</span></div>
+        <div class="plato"><span class="plato__nombre">Lomo extra-tierno a la plancha</span><span class="plato__guia"></span><span class="plato__precio">10,50 €</span></div>
+        <div class="plato"><span class="plato__nombre">Cazuela de callos</span><span class="plato__guia"></span><span class="plato__precio">10,50 €</span></div>
+        <div class="plato"><span class="plato__nombre">Frito mallorquín</span><span class="plato__guia"></span><span class="plato__precio">10,50 €</span></div>
+      </section>
+
+      <!-- ========== POSTRES (enmarcados como caseros) ========== -->
+      <section class="seccion-carta" id="postres" aria-labelledby="t-postres">
+        <h2 id="t-postres">Postres</h2>
+        <div class="marco-caseros">
+          <span class="sello">100% postres caseros</span>
+          <div class="plato"><span class="plato__nombre">Flan casero</span><span class="plato__guia"></span><span class="plato__precio">3,50 €</span></div>
+          <div class="plato"><span class="plato__nombre">Pudin</span><span class="plato__guia"></span><span class="plato__precio">3,50 €</span></div>
+          <div class="plato"><span class="plato__nombre">Natilla</span><span class="plato__guia"></span><span class="plato__precio">3,50 €</span></div>
+          <div class="plato"><span class="plato__nombre">Fruta del tiempo</span><span class="plato__guia"></span><span class="plato__precio">2,50 €</span></div>
+          <div class="plato"><span class="plato__nombre">Helados La Menorquina<span class="plato__desc">En vitrina — pregunta por los sabores</span></span><span class="plato__guia"></span><span class="plato__precio">Vitrina</span></div>
+        </div>
+      </section>
+
+      <!-- ========== BODEGA ========== -->
+      <section class="seccion-carta" id="bodega" aria-labelledby="t-bodega">
+        <h2 id="t-bodega">Bodega</h2>
+        <div class="plato"><span class="plato__nombre">Vino blanco<span class="plato__desc">Rueda / Verdejo · Copa 3,75 €</span></span><span class="plato__guia"></span><span class="plato__precio">17,50 €</span></div>
+        <div class="plato"><span class="plato__nombre">Vino tinto<span class="plato__desc">Rioja · Copa 3,75 €</span></span><span class="plato__guia"></span><span class="plato__precio">17,50 €</span></div>
+        <div class="plato"><span class="plato__nombre">Vino tinto<span class="plato__desc">Ribera del Duero · Copa 3,75 €</span></span><span class="plato__guia"></span><span class="plato__precio">17,50 €</span></div>
+      </section>
+
+      <div class="centrado seccion" style="padding-top:1rem">
+        <a class="btn btn--llamar" href="tel:971431058">📞 Reservar mesa · 971 43 10 58</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__rejilla">
+        <div class="pie__marca">
+          <img class="logo-blanco" src="assets/logo-rafa.svg" alt="Restaurante Rafa">
+          <p>Cocina casera y menú diario en el Polígono Son Castelló.</p>
+          <p><span class="wifi">📶 Zona Wi-Fi</span></p>
+        </div>
+        <div>
+          <h3>Dónde estamos</h3>
+          <p>Gran Via Asima, 26<br>Polígono Son Castelló · 07009 Palma</p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Restaurante+Rafa+Gran+Via+Asima+26+Palma" target="_blank" rel="noopener">Cómo llegar →</a></p>
+        </div>
+        <div>
+          <h3>Horario</h3>
+          <p>Lunes a sábado · 05:30 – 17:30</p>
+          <p><strong>Cerrado domingos y festivos</strong></p>
+        </div>
+        <div>
+          <h3>Reservas</h3>
+          <p><a href="tel:971431058">971 43 10 58</a></p>
+          <p><a href="contacto.html">Escríbenos →</a></p>
+        </div>
+      </div>
+      <div class="pie__condiciones">
+        <ul>
+          <li>Solo una cuenta por mesa</li>
+          <li>No se puede cambiar el postre por café</li>
+          <li>El menú no incluye refrescos ni cafés</li>
+        </ul>
+        <p class="pie__legal">© <span data-anio>2026</span> Restaurante Rafa · Precios con IVA incluido</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/comun.js"></script>
+</body>
+</html>

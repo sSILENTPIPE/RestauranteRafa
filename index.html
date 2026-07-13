@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Restaurante Rafa · Menú diario y cocina casera en Son Castelló, Palma</title>
+  <meta name="description" content="Bar restaurante Rafa en el Polígono Son Castelló (Palma). Menú del día, bocadillos, arroces y postres 100% caseros. Paella de pescado y marisco todos los viernes. Reservas: 971 43 10 58.">
+  <meta name="theme-color" content="#1E3A8A">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-rafa.svg">
+  <meta property="og:title" content="Restaurante Rafa · Son Castelló, Palma">
+  <meta property="og:description" content="Menú del día, arroces de fin de semana y postres 100% caseros. Reservas: 971 43 10 58.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Caveat:wght@600&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="marca" href="index.html" aria-label="Restaurante Rafa — Inicio">
+        <img class="logo-blanco" src="assets/logo-rafa.svg" alt="Restaurante Rafa">
+      </a>
+      <button class="nav-boton" aria-expanded="false" aria-controls="nav-principal">☰ Menú</button>
+      <nav class="nav-principal" id="nav-principal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
+          <li><a href="menu-diario.html">Menú del día</a></li>
+          <li><a href="la-carta.html">La carta</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <a class="btn-llamar-nav" href="tel:971431058">
+        📞 <span class="texto">971 43 10 58</span><span class="texto-corto">Llamar</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ============ PORTADA ============ -->
+    <section class="hero contenedor">
+      <img class="hero__logo" src="assets/logo-rafa.svg" alt="Restaurante Rafa">
+      <p class="hero__lema">
+        Cocina casera, menú del día y arroces para la gente del polígono.
+        De lunes a sábado en Son Castelló, Palma.
+      </p>
+      <div class="hero__acciones">
+        <a class="btn btn--llamar" href="tel:971431058">📞 Llamar para reservar · 971 43 10 58</a>
+        <a class="btn btn--contorno" href="menu-diario.html">Ver el menú de hoy</a>
+      </div>
+    </section>
+
+    <!-- ============ AVISOS DESTACADOS ============
+         Para cambiar el aviso, edita el texto de abajo.
+         Para ocultarlo, añade class="aviso oculto".        -->
+    <section class="contenedor" aria-label="Avisos">
+      <p class="aviso">
+        📢 <span><strong>Recuerda:</strong> domingos y festivos permanecemos cerrados.</span>
+      </p>
+    </section>
+
+    <!-- ============ ARROCES DE FIN DE SEMANA ============ -->
+    <section class="seccion contenedor" aria-labelledby="titulo-arroces">
+      <div class="banner-arroces">
+        <h2 class="banner-arroces__titulo" id="titulo-arroces">Fines de semana de arroz 🥘</h2>
+        <ul class="banner-arroces__dias">
+          <li>
+            <strong>Todos los viernes del año</strong>
+            Paella de pescado y marisco
+          </li>
+          <li>
+            <strong>Todos los sábados del año</strong>
+            Arroz marinera de pescado y marisco
+          </li>
+        </ul>
+        <p class="banner-arroces__nota">Plazas limitadas — reserva la tuya en el 971 43 10 58.</p>
+      </div>
+    </section>
+
+    <!-- ============ INFORMACIÓN PRÁCTICA ============ -->
+    <section class="seccion contenedor" aria-labelledby="titulo-info" style="padding-top:0">
+      <p class="cejilla cejilla--marino">El bar de siempre</p>
+      <h2 id="titulo-info">Lo que necesitas saber</h2>
+
+      <div class="rejilla-info mt-1">
+        <article class="tarjeta">
+          <h3>🕐 Horario</h3>
+          <p class="dato-fuerte">Lunes a sábado<br>05:30 – 17:30</p>
+          <p><span class="cerrado">Cerrado domingos y festivos</span></p>
+          <p><span class="wifi">📶 Zona Wi-Fi para clientes</span></p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>📍 Dónde estamos</h3>
+          <p>Gran Via Asima, 26<br>Polígono Son Castelló<br>07009 Palma</p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Restaurante+Rafa+Gran+Via+Asima+26+Palma" target="_blank" rel="noopener">Cómo llegar en Google Maps →</a></p>
+        </article>
+
+        <article class="tarjeta tarjeta--papel">
+          <h3>🍽️ Menú del día</h3>
+          <p>
+            <strong>De lunes a viernes</strong><br>
+            Completo 15,50 € · Medio 12,50 €
+          </p>
+          <p>
+            <strong>Sábados</strong><br>
+            Completo 19,90 € · Medio 17,90 €
+          </p>
+          <p><a href="menu-diario.html">Ver los platos de hoy →</a></p>
+        </article>
+
+        <article class="tarjeta tarjeta--papel">
+          <h3>Nuestro orgullo dulce</h3>
+          <p><span class="sello">100% postres caseros</span></p>
+          <p class="mt-1">Flan, puding, natillas… hechos aquí cada día, como toda la vida.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CIERRE ============ -->
+    <section class="seccion contenedor centrado" style="padding-top:0">
+      <h2>¿Comemos?</h2>
+      <p>Guárdate un sitio antes de que se llene la barra.</p>
+      <a class="btn btn--llamar" href="tel:971431058">📞 Llamar para reservar</a>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__rejilla">
+        <div class="pie__marca">
+          <img class="logo-blanco" src="assets/logo-rafa.svg" alt="Restaurante Rafa">
+          <p>Cocina casera y menú diario en el Polígono Son Castelló.</p>
+          <p><span class="wifi">📶 Zona Wi-Fi</span></p>
+        </div>
+        <div>
+          <h3>Dónde estamos</h3>
+          <p>Gran Via Asima, 26<br>Polígono Son Castelló · 07009 Palma</p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Restaurante+Rafa+Gran+Via+Asima+26+Palma" target="_blank" rel="noopener">Cómo llegar →</a></p>
+        </div>
+        <div>
+          <h3>Horario</h3>
+          <p>Lunes a sábado · 05:30 – 17:30</p>
+          <p><strong>Cerrado domingos y festivos</strong></p>
+        </div>
+        <div>
+          <h3>Reservas</h3>
+          <p><a href="tel:971431058">971 43 10 58</a></p>
+          <p><a href="contacto.html">Escríbenos →</a></p>
+        </div>
+      </div>
+      <div class="pie__condiciones">
+        <p class="pie__legal">© <span data-anio>2026</span> Restaurante Rafa · Precios con IVA incluido</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/comun.js"></script>
+</body>
+</html>

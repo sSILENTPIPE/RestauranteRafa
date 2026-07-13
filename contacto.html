@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto y reservas · Restaurante Rafa, Son Castelló</title>
+  <meta name="description" content="Reserva mesa en Restaurante Rafa: 971 43 10 58. Gran Via Asima 26, Polígono Son Castelló, Palma. Abierto de lunes a sábado.">
+  <meta name="theme-color" content="#1E3A8A">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-rafa.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Caveat:wght@600&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="marca" href="index.html" aria-label="Restaurante Rafa — Inicio">
+        <img class="logo-blanco" src="assets/logo-rafa.svg" alt="Restaurante Rafa">
+      </a>
+      <button class="nav-boton" aria-expanded="false" aria-controls="nav-principal">☰ Menú</button>
+      <nav class="nav-principal" id="nav-principal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu-diario.html">Menú del día</a></li>
+          <li><a href="la-carta.html">La carta</a></li>
+          <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+        </ul>
+      </nav>
+      <a class="btn-llamar-nav" href="tel:971431058">
+        📞 <span class="texto">971 43 10 58</span><span class="texto-corto">Llamar</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="seccion contenedor">
+      <p class="cejilla">Te esperamos en la barra</p>
+      <h1>Contacto y reservas</h1>
+      <p>Para reservar mesa, lo más rápido es una llamada. Para todo lo demás, escríbenos.</p>
+
+      <div class="rejilla-contacto mt-2">
+
+        <!-- Columna: dónde y cuándo -->
+        <div>
+          <div class="rejilla-info">
+            <article class="tarjeta tarjeta--papel">
+              <h3>📞 Reservas</h3>
+              <p class="dato-fuerte"><a href="tel:971431058">971 43 10 58</a></p>
+              <p>De lunes a sábado, en horario de apertura.</p>
+              <a class="btn btn--llamar btn--bloque" href="tel:971431058">Llamar para reservar</a>
+            </article>
+
+            <article class="tarjeta">
+              <h3>📍 Dirección</h3>
+              <p>Gran Via Asima, 26<br>Polígono Son Castelló<br>07009 Palma · Illes Balears</p>
+              <p><a href="https://www.google.com/maps/search/?api=1&query=Restaurante+Rafa+Gran+Via+Asima+26+Palma" target="_blank" rel="noopener">Abrir en Google Maps →</a></p>
+            </article>
+
+            <article class="tarjeta">
+              <h3>🕐 Horario</h3>
+              <p class="dato-fuerte">Lunes a sábado<br>05:30 – 17:30</p>
+              <p><span class="cerrado">Cerrado domingos y festivos</span></p>
+            </article>
+          </div>
+
+          <div class="mapa mt-1">
+            <iframe
+              title="Mapa: Restaurante Rafa, Gran Via Asima 26, Palma"
+              src="https://maps.google.com/maps?q=Restaurante%20Rafa%2C%20Gran%20Via%20Asima%2026%2C%20Palma&z=16&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+        <!-- Columna: formulario -->
+        <div class="tarjeta tarjeta--papel">
+          <h2>Escríbenos</h2>
+          <p>Grupos, comidas de empresa, dudas de la carta… te contestamos en cuanto podamos.</p>
+
+          <form class="formulario" id="form-contacto" method="POST" novalidate>
+            <div class="campo">
+              <label for="c-nombre">Nombre</label>
+              <input id="c-nombre" name="nombre" type="text" autocomplete="name" required>
+            </div>
+            <div class="campo">
+              <label for="c-telefono">Teléfono o email</label>
+              <input id="c-telefono" name="contacto" type="text" autocomplete="tel" required>
+            </div>
+            <div class="campo">
+              <label for="c-mensaje">Mensaje</label>
+              <textarea id="c-mensaje" name="mensaje" required placeholder="Ej: ¿Tenéis mesa para 8 el viernes a las 14:00?"></textarea>
+            </div>
+            <button class="btn btn--marino btn--bloque" type="submit">Enviar mensaje</button>
+            <p class="nota-formulario" id="nota-formulario" hidden></p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__rejilla">
+        <div class="pie__marca">
+          <img class="logo-blanco" src="assets/logo-rafa.svg" alt="Restaurante Rafa">
+          <p>Cocina casera y menú diario en el Polígono Son Castelló.</p>
+          <p><span class="wifi">📶 Zona Wi-Fi</span></p>
+        </div>
+        <div>
+          <h3>Dónde estamos</h3>
+          <p>Gran Via Asima, 26<br>Polígono Son Castelló · 07009 Palma</p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Restaurante+Rafa+Gran+Via+Asima+26+Palma" target="_blank" rel="noopener">Cómo llegar →</a></p>
+        </div>
+        <div>
+          <h3>Horario</h3>
+          <p>Lunes a sábado · 05:30 – 17:30</p>
+          <p><strong>Cerrado domingos y festivos</strong></p>
+        </div>
+        <div>
+          <h3>Reservas</h3>
+          <p><a href="tel:971431058">971 43 10 58</a></p>
+        </div>
+      </div>
+      <div class="pie__condiciones">
+        <p class="pie__legal">© <span data-anio>2026</span> Restaurante Rafa · Precios con IVA incluido</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/comun.js"></script>
+  <script>
+    /* Formulario: usa Formspree si hay ID en config.js;
+       si no, guía al visitante hacia el teléfono. */
+    (function () {
+      const form = document.getElementById("form-contacto");
+      const nota = document.getElementById("nota-formulario");
+      const id = (window.RAFA_CONFIG || {}).FORMSPREE_ID;
+
+      if (id) form.action = "https://formspree.io/f/" + id;
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+
+        if (!id) {
+          nota.hidden = false;
+          nota.innerHTML = 'El formulario aún no está conectado. Mientras tanto, llámanos al <a href="tel:971431058"><strong>971 43 10 58</strong></a> y te atendemos al momento.';
+          return;
+        }
+
+        const boton = form.querySelector("button[type=submit]");
+        boton.disabled = true; boton.textContent = "Enviando…";
+
+        try {
+          const r = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" }
+          });
+          if (!r.ok) throw new Error();
+          form.reset();
+          nota.hidden = false;
+          nota.textContent = "Mensaje enviado ✓ Te responderemos lo antes posible.";
+        } catch {
+          nota.hidden = false;
+          nota.innerHTML = 'No se pudo enviar el mensaje. Llámanos al <a href="tel:971431058"><strong>971 43 10 58</strong></a>.';
+        } finally {
+          boton.disabled = false; boton.textContent = "Enviar mensaje";
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
